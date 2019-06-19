@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "src/index.ts",
   "scripts": {
-    "tsc": "tsc src/index.ts",
-    "ts-node": "ts-node src/index.ts"
+    "tsc": "tsc --outDir dist",
+    "ts-node": "ts-node"
   },
   "repository": "https://github.com/aofleejay/try-typescript.git",
   "author": "aofleejay <aofleejay@hotmail.com>",
