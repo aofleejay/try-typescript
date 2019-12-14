@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 function sing(lyrics: string): void {
   console.log(lyrics)
 }
