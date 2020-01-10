@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 // String
 const fullname: string = 'John Doe'
 const greeting: string = `Hello ${fullname}`
