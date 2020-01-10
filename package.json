@@ -4,13 +4,17 @@
   "main": "src/index.ts",
   "scripts": {
     "tsc": "tsc",
-    "ts-node": "ts-node"
+    "ts-node": "ts-node",
+    "map": "parcel ./src/map/index.html"
   },
   "repository": "https://github.com/aofleejay/try-typescript.git",
   "author": "aofleejay",
   "license": "MIT",
   "devDependencies": {
+    "@types/faker": "^4.1.8",
+    "faker": "^4.1.0",
     "husky": "^3.0.5",
+    "parcel-bundler": "^1.12.4",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1",
     "ts-node": "^8.4.1",
