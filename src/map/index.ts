@@ -4,7 +4,7 @@ import Map from './map'
 
 const user = new User()
 const company = new Company()
-new Map()
 
-console.log(user)
-console.log(company)
+const map = new Map()
+map.addMarker(user)
+map.addMarker(company)
