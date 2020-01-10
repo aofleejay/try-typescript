@@ -1,10 +1,10 @@
 import * as faker from 'faker'
 
 class User {
-  name: String
+  name: string
   location: {
-    lat: Number
-    lng: Number
+    lat: number
+    lng: number
   }
 
   constructor() {
