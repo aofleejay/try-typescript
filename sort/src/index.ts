@@ -1,6 +1,13 @@
 import Sorter from './sorter'
+import NumbersCollection from './numbersCollection'
+import CharactersCollection from './charactersCollection'
 
-const numbers = [9, 5, 7, 3, 2, 1, 6, 5, 4, 8, 6]
-const sorter = new Sorter(numbers)
+const numbersCollection = new NumbersCollection([9, 5, 7, 3, 2])
+let sorter = new Sorter(numbersCollection)
 sorter.sort()
-console.log(sorter.data)
+console.log(numbersCollection.data)
+
+const charactersCollection = new CharactersCollection('deQavCOdKEl')
+sorter = new Sorter(charactersCollection)
+sorter.sort()
+console.log(charactersCollection.data)

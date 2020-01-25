@@ -1,17 +1,21 @@
-class Sorter {
-  public data: number[]
+interface Sortable {
+  length: number
+  compare(leftIndex: number, rightIndex: number): boolean
+  swap(leftIndex: number, rightIndex: number): void
+}
 
-  constructor(data: number[]) {
-    this.data = data
+class Sorter {
+  public collection: Sortable
+
+  constructor(collection: Sortable) {
+    this.collection = collection
   }
 
   sort(): void {
-    for (let i = 0; i < this.data.length; i++) {
-      for (let j = 0; j < this.data.length - i - 1; j++) {
-        if (this.data[j] > this.data[j + 1]) {
-          const temp = this.data[j + 1]
-          this.data[j + 1] = this.data[j]
-          this.data[j] = temp
+    for (let i = 0; i < this.collection.length; i++) {
+      for (let j = 0; j < this.collection.length - i - 1; j++) {
+        if (this.collection.compare(j, j + 1)) {
+          this.collection.swap(j, j + 1)
         }
       }
     }
