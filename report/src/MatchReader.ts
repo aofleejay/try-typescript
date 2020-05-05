@@ -1,17 +1,10 @@
 import { dateStringToDate } from './utils'
+import { Match, MatchResult } from './types'
 
 interface DataReader {
   data: string[][]
   read(): void
 }
-
-enum MatchResult {
-  HomeWin = 'H',
-  AwayWin = 'A',
-  Draw = 'D',
-}
-
-type Match = [Date, string, string, number, number, MatchResult, string]
 
 class MatchReader {
   private reader: DataReader
