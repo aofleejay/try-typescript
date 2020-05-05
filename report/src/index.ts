@@ -1,20 +1,6 @@
-import fs from 'fs'
-import { dateStringToDate } from './utils'
+import { CSVFileReader } from './CSVFileReader'
 
-const matches = fs
-  .readFileSync(__dirname + '/../football.csv', { encoding: 'utf-8' })
-  .split('\n')
-  .map(line => line.split(','))
-  .map(match => {
-    return [
-      dateStringToDate(match[0]),
-      match[1],
-      match[2],
-      parseInt(match[3]),
-      parseInt(match[4]),
-      match[5],
-      match[6],
-    ]
-  })
+const reader = new CSVFileReader(__dirname + '/../football.csv')
+reader.read()
 
-console.log(matches)
+console.log(reader.data)
