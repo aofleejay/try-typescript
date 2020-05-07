@@ -14,7 +14,7 @@ const baseUrl = 'http://localhost:3000/users'
 
 class User extends Model<UserData> {
   static buildUser(data: UserData) {
-    return new Model(
+    return new User(
       new Attributes<UserData>(data),
       new Events(),
       new Sync<UserData>(baseUrl),
@@ -25,6 +25,11 @@ class User extends Model<UserData> {
     return new Collection<User, UserData>(baseUrl, (json: UserData) =>
       User.buildUser(json),
     )
+  }
+
+  setRandomAge() {
+    const age = Math.round(Math.random() * 100)
+    this.set({ age })
   }
 }
 

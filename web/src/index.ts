@@ -1,9 +1,7 @@
+import { UserForm } from './UserForm'
 import { User } from './User'
 
-const collection = User.buildUserCollection()
-
-collection.on('change', () => {
-  console.log(collection)
-})
-
-collection.fetch()
+const user = User.buildUser({ name: 'June', age: 23 })
+const root = document.querySelector('#root')
+const userForm = new UserForm(root, user)
+userForm.render()
