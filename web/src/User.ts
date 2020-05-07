@@ -1,4 +1,5 @@
-import { Eventing } from './Eventing'
+import { Model } from './Model'
+import { Events } from './Events'
 import { Sync } from './Sync'
 import { Attributes } from './Attributes'
 
@@ -8,13 +9,15 @@ interface UserData {
   age?: number
 }
 
-class User {
-  public events = new Eventing()
-  public sync = new Sync<UserData>('http://localhost:3000/users')
-  public attributes: Attributes<UserData>
+const baseUrl = 'http://localhost:3000/users'
 
-  constructor(data: UserData = {}) {
-    this.attributes = new Attributes<UserData>(data)
+class User extends Model<UserData> {
+  static buildUser(data: UserData) {
+    return new Model(
+      new Attributes<UserData>(data),
+      new Events(),
+      new Sync<UserData>(baseUrl),
+    )
   }
 }
 

@@ -1,6 +1,8 @@
 import { User } from './User'
 
-const user = new User({ id: 1, name: 'John', age: 20 })
+const user = User.buildUser({ name: 'James', age: 20 })
 
-const id = user.attributes.get('id')
-console.log(id)
+user.save()
+setTimeout(() => {
+  console.log(user)
+}, 5000)

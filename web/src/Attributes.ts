@@ -1,12 +1,16 @@
 class Attributes<T> {
-  constructor(private data: T) {}
+  constructor(private attributes: T) {}
 
-  get<K extends keyof T>(key: K): T[K] {
-    return this.data[key]
+  get = <K extends keyof T>(key: K): T[K] => {
+    return this.attributes[key]
   }
 
-  set(update: T) {
-    Object.assign(this.data, update)
+  getAll = (): T => {
+    return this.attributes
+  }
+
+  set = (values: T) => {
+    Object.assign(this.attributes, values)
   }
 }
 

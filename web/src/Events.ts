@@ -1,15 +1,15 @@
-type Callback = () => void
+import { Callback } from './types'
 
-class Eventing {
+class Events {
   private events: { [key: string]: Callback[] } = {}
 
-  on(eventName: string, callback: Callback) {
+  on = (eventName: string, callback: Callback) => {
     const events = this.events[eventName] || []
     events.push(callback)
     this.events[eventName] = events
   }
 
-  trigger(eventName: string) {
+  trigger = (eventName: string) => {
     const callbacks = this.events[eventName]
 
     if (callbacks && callbacks.length !== 0) {
@@ -20,4 +20,4 @@ class Eventing {
   }
 }
 
-export { Eventing }
+export { Events }
