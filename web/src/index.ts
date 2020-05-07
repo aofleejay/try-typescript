@@ -1,8 +1,9 @@
 import { User } from './User'
 
-const user = User.buildUser({ name: 'James', age: 20 })
+const collection = User.buildUserCollection()
 
-user.save()
-setTimeout(() => {
-  console.log(user)
-}, 5000)
+collection.on('change', () => {
+  console.log(collection)
+})
+
+collection.fetch()

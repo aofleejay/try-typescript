@@ -1,4 +1,5 @@
 import { Model } from './Model'
+import { Collection } from './Collection'
 import { Events } from './Events'
 import { Sync } from './Sync'
 import { Attributes } from './Attributes'
@@ -19,6 +20,12 @@ class User extends Model<UserData> {
       new Sync<UserData>(baseUrl),
     )
   }
+
+  static buildUserCollection() {
+    return new Collection<User, UserData>(baseUrl, (json: UserData) =>
+      User.buildUser(json),
+    )
+  }
 }
 
-export { User }
+export { User, UserData }

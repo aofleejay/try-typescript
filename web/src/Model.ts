@@ -51,7 +51,7 @@ class Model<T extends HasId> {
     if (id) {
       this.sync
         .fetch(this.attributes.get('id'))
-        .then((response: AxiosResponse<T>): void => {
+        .then((response: AxiosResponse<T>) => {
           this.set(response.data)
         })
         .catch((error) => {

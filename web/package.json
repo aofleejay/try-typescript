@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "main": "src/index.html",
   "scripts": {
+    "start": "concurrently \"yarn:start:web\" \"yarn:start:api\"",
     "start:web": "parcel ./src/index.html",
     "start:api": "json-server -w db.json"
   },
   "license": "MIT",
   "devDependencies": {
+    "concurrently": "^5.2.0",
     "parcel-bundler": "^1.12.4",
     "typescript": "^3.8.3"
   },
