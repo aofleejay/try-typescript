@@ -1,7 +1,8 @@
-import { UserForm } from './UserForm'
+import { UserPage } from './UserPage'
 import { User } from './User'
 
 const user = User.buildUser({ name: 'June', age: 23 })
 const root = document.querySelector('#root')
-const userForm = new UserForm(root, user)
-userForm.render()
+const userPage = new UserPage(root, user)
+userPage.render()
+console.log(userPage)
